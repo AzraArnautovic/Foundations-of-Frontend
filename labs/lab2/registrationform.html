@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-    
+<head>  
+<center>
+    <img src="ibulogo.jpg" width="90" height="50">
+    <h3>International Burch University</h3>
+</center>    
 </head>
+
 <body>
     <center>
     <h1>REGISTRATION FORM</h1>
@@ -11,18 +15,24 @@
 <label style="margin-right: 144px;">Username: </label><input placeholder=""><br><br>
 <label style="margin-right: 144px;">Password: </label><input placeholder=""><br><br>
 <label style="margin-right: 144px;">Date of birth: </label><input type="date"><br><br>
-<label style="margin-right: 144px;">Place of birth: </label><input placeholder=""><br><br>
-
-<form>
-    
-    <label>Male</label> <input type="radio"><br>
-    <label>Gender:                         </label>  <label>Female</label> <input type="radio"><br>
-    <label>Other</label><input type="radio"><br>
-</form>
-</form>
+<label style="margin-right: 144px;">Place of birth: </label><input placeholder=""><br>
+<br>
+<label for="gender">Gender:</label>
+    <div id="gender-options">
+    <input type="radio" id="male" name="gender" value="Male">
+    <label for="male">Male</label> <br>
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label>
+    </div>
 <label style="margin-right: 144px;">Email: </label><input placeholder=""><br><br>
 <label style="margin-right: 144px;">Phone: </label><input placeholder=""><br><br>
-<label style="margin-right: 144px;">Phone: </label><input type="color" placeholder=""><br><br>
+<label style="margin-right: 144px;">Hair color: </label><input type="color" placeholder=""><br><br>
+<label style="margin-right: 315px;">Notes: <br>
+</label><textarea rows="4" cols="50" placeholder=""></textarea><br><br>
+<input  type="checkbox"><label>Receive notifications</label><br>
+<input style="margin-right: -339px" type="submit" value="Register">
 </center>
 </body>    
 </html> 
