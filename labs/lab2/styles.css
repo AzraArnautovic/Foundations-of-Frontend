@@ -1,0 +1,74 @@
+
+.center {
+    text-align: center;
+}
+
+h1 {
+    color: blue;
+}
+
+th {
+    font-weight: bold;
+}
+
+td {
+    padding: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    width: 300px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #005f7f;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+body {
+    background-color: #85AFD4;
+}
+body, p, h1, h2, h3, h4, h5, h6, a {
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+body, p:not(h1, h2, h3, h4, h5, h6) {
+    font-weight: normal;
+}
+body, p, a {
+    color: white;
+}
+.submit {
+    background-color: #E47272;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+
+}
+
+a {
+    font-weight: bold;
+}
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 2px solid white;
+}
