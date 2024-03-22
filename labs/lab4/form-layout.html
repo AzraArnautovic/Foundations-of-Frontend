@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form class="col-lg-8">
+        <div class="form-group row">
+            <label for="firstName" class="col-sm-2 col-form-label"> First Name</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="lastName" class="col-sm-2 col-form-label"> Last Name</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                </div>
+            </div>
+        </div>
+        <!-- Repeat the above structure for each field -->
+        <div class="form-group row">
+            <label for="inputEmail" class="col-sm-2 col-form-label"> E-mail</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    </div>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="E-mail Address">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="phone" class="col-sm-2 col-form-label"> Phone</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                    </div>
+                    <input type="tel" class="form-control" id="phone" placeholder="(845)555-1212">
+                </div>
+            </div>
+        </div>
+              <div class="form-group row">
+                  <label for="address" class="col-sm-2 col-form-label"> Address</label>
+                  <div class="col-sm-10">
+                      <div class="input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-home"></i></span>
+                          </div>
+                          <input type="text" class="form-control" id="address" placeholder="Address">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="city" class="col-sm-2 col-form-label"> City</label>
+                  <div class="col-sm-10">
+                      <div class="input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-home"></i></i></span>
+                          </div>
+                          <input type="text" class="form-control" id="city" placeholder="City">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="state" class="col-sm-2 col-form-label"> State</label>
+                  <div class="col-sm-10">
+                      <div class="input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-bars"></i>
+                              </span>
+                          </div>
+                          <select class="custom-select" id="state">
+                              <option selected>Select State</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="zip" class="col-sm-2 col-form-label"> Zip Code</label>
+                  <div class="col-sm-10">
+                      <div class="input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-home"></i></span>
+                          </div>
+                          <input type="text" class="form-control" id="zip" placeholder="Zip Code">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="website" class="col-sm-2 col-form-label">Website or Domain name</label>
+                  <div class="col-sm-10">
+                      <div class="input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-globe"></i></span>
+                          </div>
+                          <input type="text" class="form-control" id="website" placeholder="Website or Domain name">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label class="col-sm-2 col-form-label"> Do you have hosting?</label>
+                  <div class="col-sm-10">
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="hosting">
+                          <label class="form-check-label" for="hosting">Yes</label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="noHosting">
+                          <label class="form-check-label" for="noHosting">No</label>
+                      </div>
+                  </div>
+              </div>
+        <div class="form-group row">
+            <label for="projectDescription" class="col-sm-2 col-form-label"> Project Description</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
+                    </div>
+                    <textarea class="form-control" id="projectDescription" rows="3" placeholder="Project Description"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10 offset-sm-2">
+              <button type="submit" class="btn btn-warning"> Send <i class="fas fa-paper-plane"></i></button>
+          </div>
+      </div>
+    </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .btn-custom {
+            background-color: rgb(55, 164, 55); 
+            width: 100%; 
+            border-radius: 20px; 
+            margin-top: 10px; 
+        }
+
+        .form-control-icon {
+            position: relative;
+        }
+
+        .form-control-icon input {
+            padding-left: 30px; 
+        }
+
+        .form-control-icon .input-group-text {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 30px;
+            border: none;
+            border-radius: 10px 0 0 10px; 
+            background-color: #f8f9fa; 
+            color: #495057; 
+        }
+        .img-container{
+            width: 250px;
+    margin-top: 59px;
+    margin-left: 57px;
+        }
+    </style>
+</head>
+<body>
+    
+                    <div class="img-container">
+                        <img src="member-login.png" alt="Your Image" class="img-fluid">
+                    </div>
+        <div class="container">
+            <div class="row justify-content-center">
+             <div class="col-md-6 col-lg-4">
+             <div class="text-center">               
+                </div>
+                <h4 class="text-center">Member Login</h4></br>
+                <form>
+                    <div class="form-group form-control-icon">
+                        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                    </div>
+                    <div class="form-group form-control-icon">
+                        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-custom">Login</button>
+                    <div class="text-center mt-2">
+                        <a href="#" class="text-muted">Forgot username/password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-4">
+                <div class="text-center">
+                    <p class="text-muted">Create your account--></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

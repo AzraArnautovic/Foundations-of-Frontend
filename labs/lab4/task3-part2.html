@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Awesome Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+          background: linear-gradient(to bottom right, #0300cd, #4fbaf8);
+          
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          color: #fff; 
+          padding: 20px; 
+        }
+     
+        .container {
+            width: 750px;
+            height: 550px;
+            padding: 130px;
+            background: linear-gradient(to bottom right, #fffdfd, white);
+            border: 1px solid #ccc; 
+            border-top-left-radius: 100px;
+            border-bottom-left-radius: 100px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            float: right;
+            color: black;
+            font-weight: lighter;
+            text-align: center;
+            position: relative;
+            
+        }
+        .male-female{
+            padding: 0px;
+            margin-right: 360px;
+        }
+        .container {
+          text-align: center; 
+        }
+
+         .title {
+          color: rgb(62, 62, 62); 
+           margin-top: 0px; 
+         }
+         .btn {
+    border-radius: 20px;
+}
+
+.btn-primary.active {
+    background-color: rgb(252, 252, 255);
+    color: rgb(18, 0, 220);
+}
+
+.top-right-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+
+.register-btn {
+    position: absolute;
+    bottom: 45px;
+    right: 39px;
+    background-color: #3697ff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 7px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 103px;
+    height: 37px;/
+}
+
+.register-btn:hover {
+    background-color: #00254c; 
+}
+.title-container{
+text-align: left; 
+    margin-bottom: 20px;
+}
+.login-btn{
+    position: absolute;
+    bottom: 570px;
+    left: 39px;
+    background-color:#fff;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    padding: 7px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 103px;
+    height: 37px;/
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="title-container">
+       <h1>Welcome</h1>
+       <p>You are 30 seconds away from earning your own money!</p>
+       <button type="button" class="login-btn">Login</button>
+    </div>
+
+    <div class="container">
+        <div class="top-right-container">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Employee
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Hirer
+                </label>
+            </div>
+            
+        </div>
+                 
+        
+        <h2 class="title">Apply as a Hirer</h2><br><br>
+        
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name*">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="password" placeholder="Password*">   
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name*">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="confirmpassword" placeholder="Confirm Password*">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="email" placeholder="Email*">
+                    
+                    
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="securityq" placeholder="Please select your security question*">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="phone" placeholder="Phone*">
+                    
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="answer" placeholder="Answer*">
+                </div>
+            </div>
+        
+        <button type="button" class="register-btn">Register</button>
+    </div>     
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
