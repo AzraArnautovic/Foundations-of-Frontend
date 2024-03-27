@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="dynamic-table.css">
+</head>
+<body>
+ <table id="myTable">
+    <tr>
+        <th><button class="sort" onclick="sortTable(0)">ID</button> </th>
+        <th><button class="sort" onclick="sortTable(1)">NAME</button> </th>
+        <th><button class="sort" onclick="sortTable(2)">COUNTRY</button> </th>
+        <th><button class="sort" onclick="sortTable(3)">EMAIL</button> </th>
+        <th><button class="sort" onclick="sortTable(4)">ACTION</button> </th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>john Doe</td>
+        <td>Afghanistan</td>
+        <td>john1@example.com</td>
+        <td><button onclick="openModal()" class="action">click</button><div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>ERROR</p>
+            </div>
+          </div></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Jane Smith</td>
+        <td>Albania</td>
+        <td>jane2@example.com</td>
+        <td><button onclick="openModal()" class="action">click</button><div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>ERROR</p>
+            </div>
+          </div></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Jim Brown</td>
+        <td>Algeria</td>
+        <td>jim3@example.com</td>
+        <td><button onclick="openModal()" class="action">click</button><div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>ERROR</p>
+            </div>
+          </div></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Jake White</td>
+        <td>Andora</td>
+        <td>jake4@example.com</td>
+        <td><button onclick="openModal()" class="action">click</button><div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>ERROR</p>
+            </div>
+          </div></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Julie Black</td>
+        <td>Angola</td>
+        <td>julie5@example.com</td>
+        <td><button onclick="openModal()" class="action">click</button>
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>ERROR</p>
+                </div>
+              </div></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Jennifer Green</td>
+        <td>Antigua and Barbuda</td>
+        <td>jennifer6@example.com</td>
+        <td><button onclick="openModal()" class="action">click</button>
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>ERROR</p>
+                </div>
+              </div></td>
+    </tr>
+ </table>
+ 
+ <script src="dynamic-table.js"></script>
+</body>
+</html>
