@@ -606,18 +606,19 @@ color:black
   color: #fff;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 55%;
   transform: translate(-50%, -50%);
   border-radius: 50px;
 }
 #cnt {
   position: absolute;
-  width: 75vw;
-  height: 83vh;
-  background: var(--grey-200);
+  width: 70vw;
+  height: 67vh;
+  background: rgb(81, 54, 84);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: white;
   /* display: flex; */
   align-items: center;
   justify-content: space-around;
@@ -638,4 +639,164 @@ input:checked + div + #cnt {
 }
 input:checked + div + #cnt + .close {
   display: block;
+}
+
+@media screen and (max-width:992px){
+  #btn{
+ display:none;
+  }
+}
+
+/*theme switcher*/
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,400i,700");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Merriweather, serif;
+    transition: background-color 0.5s ease;
+    background-color: var(--bg, white); /* Set the default background color */
+    color: var(--text, black); /* Set the default text color */
+}
+
+label,
+main {
+    background: var(--bg, white);
+    color: var(--text, black);
+}
+
+main {
+    --gradDark: hsl(0, 0%, 100%);
+    --gradLight: hsl(40, 100%, 92%);
+    background: linear-gradient(to bottom, var(--gradDark), var(--gradLight));
+    padding: 120px 40px 40px 40px;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.theme-switch__input:checked ~ main,
+.theme-switch__input:checked ~ label {
+    --text: white;
+}
+
+.theme-switch__input:checked ~ main {
+    --gradDark: hsl(0, 0%, 100%);
+    --gradLight: hsl(258, 100%, 74%);
+}
+
+/* Toggle switch */
+.theme-switch__input,
+.theme-switch__label {
+    position: absolute;
+    z-index: 1;
+}
+
+.theme-switch__input {
+    opacity: 0;
+    
+    &:hover,
+    &:focus {
+        + .theme-switch__label {
+            background-color: lightSlateGray;
+        }
+        
+        + .theme-switch__label span::after {
+            background-color: lighten(lightBlue, 10%);
+        }
+    }
+}
+
+.theme-switch__label {
+    padding: 20px;
+    margin: 60px;
+    transition: background-color 200ms ease-in-out;
+    width: 56px;
+    height: 56px;
+    border-radius: 50px;
+    text-align: center;
+    background-color: slateGray;
+    box-shadow: -4px 4px 15px inset rgba(0, 0, 0, 0.4);
+    margin-left: 476px;
+    margin-top: 43px;
+    
+    &::before,
+    &::after {
+        font-size: 2rem;
+        position: absolute;
+        transform: translate3d(0, -50%, 0);
+        top: 50%;
+    }
+    
+    &::before {
+        content: '\263C';
+        right: 100%;
+        margin-right: 10px;
+        color: orange;
+    }
+    
+    &::after {
+        content: '\263E';
+        left: 100%;
+        margin-left: 10px;
+        color: lightSlateGray;
+    }
+    
+    span {
+        position: absolute;
+        bottom: calc(100% + 10px);
+        left: 0;
+        width: 100%;
+    }
+    
+    span::after {
+        position: absolute;
+        top: calc(100% + 15px);
+        left: 5px;
+        width: 40px;
+        height: 40px;
+        content: '';
+        border-radius: 50%;
+        background-color: lightBlue;
+        transition: transform 200ms, background-color 200ms;
+        box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* Checked label styles */
+.theme-switch__input:checked ~ .theme-switch__label {
+    background-color: lightSlateGray;
+    
+    &::before {
+        color: lightSlateGray;
+    }
+    
+    &::after {
+        color: turquoise;
+    }
+    
+    span::after {
+        transform: translate3d(70px, 0, 0);
+    }
+}
+
+/* Apply changes to body when the toggle switch is checked */
+.theme-switch__input:checked ~ body {
+    --bg: hsl(198, 44%, 11%);
+    --text: white;
+}
+@media (min-width: 992px) {
+  .theme-switch__label {
+      margin-left: 0; /* Reset left margin */
+      margin-top: 0; /* Reset top margin */
+      top: 29px;
+      right: 398px;
+      cursor: pointer;
+  }
 }
