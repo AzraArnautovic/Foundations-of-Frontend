@@ -1,0 +1,10 @@
+.dancing-script-heading {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500; 
+  font-style: normal;
+}
+
+h1 {
+  @extend .dancing-script-heading;
+}
