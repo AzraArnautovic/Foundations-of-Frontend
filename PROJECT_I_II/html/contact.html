@@ -55,23 +55,34 @@
           </p>
       </article>
       <article>
-        <form class="form contact-form">
-          <!--single form row-->
-        <div class="form-row">
-          <label for="name" class="form-label">Your name</label>
-        <input type="text" name="name" id="name"class="form-input"/>
-        </div>
-        <!--single form row-->
-        <div class="form-row">
-          <label for="email" class="form-label">Your Email</label>
-        <input type="text" name="email" id="email"class="form-input"/>
-        </div>
-        <div class="form-row">
-          <label for="message" class="form-label">Message</label>
-        <textarea name="message" id="message" class="form-textarea"></textarea>
-        </div>
-        <button type="submit" class="btn btn-block">Submit</button>
-      </form>
+        <form class="form contact-form" id="contactForm">
+          <!-- Single form row for name -->
+          <div class="form-row">
+            <label for="name" class="form-label">Your name</label>
+            <input type="text" name="name" id="name" class="form-input" required>
+          </div>
+    
+          <!-- Single form row for email -->
+          <div class="form-row">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" name="email" id="email" class="form-input" required>
+          </div>
+    
+          <!-- Single form row for password -->
+          <div class="form-row">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" id="password" class="form-input" required>
+            <div id="password-strength"></div>
+          </div>
+    
+          <!-- Single form row for message -->
+          <div class="form-row">
+            <label for="message" class="form-label">Message</label>
+            <textarea name="message" id="message" class="form-textarea" required></textarea>
+          </div>
+    
+          <button type="submit" class="btn btn-block">Submit</button>
+        </form>
       </article>
     </section>
     <section class="featured-recipes">
@@ -111,5 +122,10 @@
       Recipe Book </span> Built by Azra Arnautović
     </p>
    </footer>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+   <script src="/java/dynamic.js"></script>
+
 </body>
 </html>
