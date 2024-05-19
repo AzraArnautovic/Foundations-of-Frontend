@@ -3,6 +3,7 @@
 ::before {
   box-sizing: border-box;
 }
+
 /* fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
@@ -521,6 +522,13 @@ color:black
 .container-fluid::after{
   display: none;
 }
+
+.container-fluid{
+  display: flex;
+  align-items: center;
+  min-width: -webkit-fill-available;
+
+}
 #grey{
   color:var(--grey-600)
 }
@@ -676,6 +684,10 @@ main {
     text-align: center;
 }
 
+#hero {
+  color: black;
+}
+
 .wrapper {
     max-width: 700px;
     margin: 0 auto;
@@ -790,6 +802,7 @@ main {
 .theme-switch__input:checked ~ body {
     --bg: hsl(198, 44%, 11%);
     --text: white;
+    background-color: red;
 }
 @media (min-width: 992px) {
   .theme-switch__label {
@@ -845,4 +858,153 @@ main {
 
 .is-valid {
   border-color: #28a745;
+}
+
+/*accordion menu*/
+.accordion {
+  margin: 20px auto;
+  width: 80%;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-title {
+  background-color: #f0f0f0;
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.accordion-content {
+  display: none;
+  padding: 15px;
+}
+
+.accordion-content.active {
+  display: block;
+}
+
+/*view more*/
+.recipe {
+  text-decoration: none;
+  color: #007bff; /* Link color */
+}
+
+.recipe:hover::after {
+  content: "View More";
+  display: inline-block;
+  margin-left: 5px; /* Add some space between the link text and "View More" */
+  font-weight: bold;
+}
+
+.recipe:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* CSS for FAQ toggle buttons */
+.accordion-item {
+  position: relative;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Modal container -FOR INTERACTIVE GALLERY IN CONTACT PAGE */
+.modal-container {
+  display: none; /* Hide modal by default */
+  position: fixed;
+  z-index: 1; /* Sit on top of everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+  overflow: auto; /* Enable scrolling if needed */
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 10% from top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* 80% of modal width */
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Image inside modal */
+.modal-content img {
+  width: 100%; /* Full width */
+}
+
+/* Caption for image */
+.caption {
+  margin-top: 20px;
+}
+
+/* Hide scrollbar for the body when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+#entity-info{
+  margin-left: 205px;
+ 
+}
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin: 5px;
+}
+
+.button:hover {
+  background-color: #158e31; 
+}
+#edit-btn, #delete-btn {
+  position: relative;
+  top: -50px}
+  .description {
+    font-size: 16px;
+    font-weight: bold; 
+    color: #000; 
+    margin-bottom: 10px;
+    position: relative;
+    top: -50px;
+    left: 180px;
 }
