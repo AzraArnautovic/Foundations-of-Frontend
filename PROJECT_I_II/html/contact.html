@@ -2,8 +2,8 @@
     <section class="contact-container">
       <article class="contact-info">
         <h3>Want to get in touch?</h3>
-        <p>We'd love to hear from you! Whether you have a question about a recipe, want to collaborate, or simply want to say hello, feel free to reach out to us using the contact form below.</p>
-        <p>Contact Form
+        <p id="p1">We'd love to hear from you! Whether you have a question about a recipe, want to collaborate, or simply want to say hello, feel free to reach out to us using the contact form below.</p>
+        <p id="p2">Contact Form
           Please fill out the form below, and we'll get back to you as soon as possible.
           </p>
       </article>
@@ -40,36 +40,36 @@
     </section>
     <section class="featured-recipes">
       <h5 class="featured-title">~Featured recipes~</h5>
-      <!--recipes list-->
-    <div class="recipes-list">
 
-     <!--single recipe--> 
-    <a href="#meatballs" class="recipe" onclick="openModal('/assets/images/meatballs.webp')">
-     <img src="/assets/images/meatballs.webp" alt="Swedish meatballs" class="img recipe-img"/>
-     <h5>Swedish meatballs</h5>
-     <p>Prep : 15min | Cook : 30min</p>
-     </a>
 
-     <!--single recipe--> 
-    <a href="#sushi" class="recipe" onclick="openModal('/assets/images/meatballs.webp')">
-     <img src="/assets/images/sushi.jpg" alt="California rolls" class="img recipe-img"/>
-     <h5>Sushi ~ California rolls</h5>
-     <p>Prep : 25min | Assemble : 15min</p>
-     </a>
-     <img width="200" height="20" src="/assets/images/veganbuddhabowl.jpg" style="display:block; margin:10px;" alt="Vegan bowl" class="img recipe-img" id="vegan" onclick="openModal('/assets/images/meatballs.webp')"/>
+      <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img id="modal-img" class="modal-content">
+      </div>
 
-     <!--single recipe--> 
-     <a href="#veganbowl" class="recipe" >
+      <div class="gallery">
+        <!-- Single recipe -->
+        <div class="recipe">
+          <img src="/assets/images/meatballs.webp" alt="Swedish meatballs" class="img recipe-img" onclick="openModal('/assets/images/meatballs.webp')">
+          <h5>Swedish meatballs</h5>
+          <p>Prep : 15min | Cook : 30min</p>
+        </div>
+      
+        <!-- Single recipe -->
+        <div class="recipe">
+          <img src="/assets/images/sushi.jpg" alt="California rolls" class="img recipe-img" onclick="openModal('/assets/images/sushi.jpg')">
+          <h5>Sushi ~ California rolls</h5>
+          <p>Prep : 25min | Assemble : 15min</p>
+        </div>
+      
+        <!-- Single recipe -->
+        <div class="recipe">
+          <img src="/assets/images/veganbuddhabowl.jpg" alt="Vegan bowl" class="img recipe-img" onclick="openModal('/assets/images/veganbuddhabowl.jpg')">
+          <h5>Vegan Buddha Bowl</h5>
+          <p>Prep : 20min | Cook : 15min</p>
+        </div>
+      </div>
 
-     <h5>Vegan Buddha Bowl</h5>
-     <p>Prep : 20min | Cook : 15min</p>
-     </a>
-    </div>
-<!-- Modal -->
-<div id="modal" class="modal" onclick="closeModal()">
-  <span class="close">&times;</span>
-  <img id="modal-img" class="modal-img">
-</div>
     </section>
   
 

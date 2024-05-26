@@ -48,7 +48,8 @@
        <!--SPAPP JS-->
        <script src="./js/jquery.spapp.js"></script>
        <script src="./js/jquery.spapp.min.js"></script>
-      
+       <script src="./js/login.js"></script>
+       <script src="/js/custom.js"></script>
         
 </head>
 <body>
@@ -80,6 +81,11 @@
       <li class="nav-item">
         <a class="nav-link" href="#contact">Contact</a>
       </li>
+      <li class="nav-item">      <button class="btn" onclick="UserService.logout()">Logout</button>
+      </li>
+     
+        
+     
     </ul>
    
   </div>
@@ -91,8 +97,10 @@
 </nav>
 
 <header class="hero">
+  <div class="overlay"></div>
   <div class="hero-container">
     <div class="hero-text">
+
       <h1>Recipe Book</h1>
       <h4>Delicious creations, Flavor foundations, Culinary inspirations</h4>
     </div>
@@ -104,6 +112,7 @@
         <section id="home" data-load="home.html">
         </section>
         <section id="about" data-load="about.html">
+        <section id="view_more" data-load="view_more.html"></section>
         </section>      
        <section id="recipes" data-load="recipes.html">
         </section>
@@ -137,8 +146,13 @@
         templateDir: "./html/"
 
     });
-
     app.run();
+    let user = JSON.parse(localStorage.getItem("user"));
+    console.log(user)
+    if (!user) {
+      window.location.replace("login.html");
+    } 
+    
 </script>
 
 </body>
