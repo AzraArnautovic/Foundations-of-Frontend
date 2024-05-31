@@ -1,5 +1,5 @@
 
-
+$(document).ready(function() {
 $(document).ready(function () {
     // Function to initialize form validation
     function initFormValidation() {
@@ -85,96 +85,85 @@ $(document).ready(function () {
 
 
 
-$(document).ready(function() {
+  $(document).ready(function() {
     const accordion = document.getElementById('accordion');
 
-    // Load FAQ data from JSON file
-    fetch('faqs.json')
-        .then(response => response.json())
-        .then(data => {
-            data['faqs'].forEach(faq => {
-                const item = document.createElement('div');
-                item.classList.add('accordion-item');
+    // Load FAQ data from JSON file and display in the accordion
+    function loadFAQs() {
+        fetch('faqs.json')
+            .then(response => response.json())
+            .then(data => {
+                // Clear existing content in the accordion
+                accordion.innerHTML = '';
 
-                const title = document.createElement('div');
-                title.classList.add('accordion-title');
-                title.textContent = faq.question;
+                data['faqs'].forEach(faq => {
+                    const item = document.createElement('div');
+                    item.classList.add('accordion-item');
 
-                const content = document.createElement('div');
-                content.classList.add('accordion-content');
-                content.textContent = faq.answer;
+                    const title = document.createElement('div');
+                    title.classList.add('accordion-title');
+                    title.textContent = faq.question;
 
-                const accordion = document.createElement('div')
+                    const content = document.createElement('div');
+                    content.classList.add('accordion-content');
+                    content.textContent = faq.answer;
 
-                // Initially hide the content
-                content.style.display = 'none';
+                    // Initially hide the content
+                    content.style.display = 'none';
 
-                // Add click event listener to toggle content
-                title.addEventListener('click', function() {
-                    content.style.display = content.style.display === 'none' ? 'block' : 'none';
+                    // Add click event listener to toggle content
+                    title.addEventListener('click', function() {
+                        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+                    });
+
+                    item.appendChild(title);
+                    item.appendChild(content);
+                    accordion.appendChild(item);
                 });
-
-                item.appendChild(title);
-                item.appendChild(content);
-                accordion.appendChild(item);
-            });
-        })
-        .catch(error => console.error('Error loading FAQ data:', error));
-
-    //Edit and Delete options
-
-    // Fetch JSON data containing the entity
-    fetch('faqs.json')
-        .then(response => response.json())
-        .then(entity => {
-            const editButton = document.getElementById('edit-btn');
-            const deleteButton = document.getElementById('delete-btn');
-            const successMessage = document.getElementById('success-message');
-            // Display the entity information on the webpage
-            displayEntity(entity['faqs']);
-            console.log(entity)
-
-            // Event listener for Edit button
-            editButton.addEventListener('click', function() {
-                // Simulate editing functionality (e.g., show form for editing)
-                console.log('Editing...');
-                // Show success message
-                showSuccessMessage();
-            });
-
-            // Event listener for Delete button
-            deleteButton.addEventListener('click', function() {
-                // Prompt user to confirm deletion
-                if (confirm('Are you sure you want to delete this entity?')) {
-                    // Simulate deletion functionality
-                    console.log('Deleting...');
-                    // Remove entity from webpage
-                    document.getElementById('entity-info').innerHTML = '';
-                    // Show success message
-                    showSuccessMessage();
-                }
-            });
-        })
-        .catch(error => console.error('Error fetching entity data:', error));
-
-    // Function to display the entity information on the webpage
-    function displayEntity(entity) {
-            const entityInfo = document.getElementById('entity-info');
-             // Display entity information 
-             entityInfo.innerHTML = entity.map((e)=> {
-                 console.log(e);
-                 return `<div id="hero"><p><strong>Question:</strong> ${e.question}</p>    
-             <p><strong>Answer:</strong> ${e.answer}</p></div>`}).join(''); // Join the array into a single string;
+            })
+            .catch(error => console.error('Error loading FAQ data:', error));
     }
+
+    // Initial load of FAQs
+    loadFAQs();
+
+    // Edit and Delete options
+    const editButton = document.getElementById('edit-btn');
+    const deleteButton = document.getElementById('delete-btn');
+    const successMessage = document.getElementById('success-message');
+
+    // Event listener for Edit button
+    editButton.addEventListener('click', function() {
+        // Simulate editing functionality (e.g., show form for editing)
+        const newQuestion = prompt("Enter the new question:");
+        const newAnswer = prompt("Enter the new answer:");
+
+        if (newQuestion && newAnswer) {
+            console.log('Editing...');
+            // Show success message
+            showSuccessMessage();
+        }
+    });
+
+    // Event listener for Delete button
+    deleteButton.addEventListener('click', function() {
+        // Prompt user to confirm deletion
+        if (confirm('Are you sure you want to delete this entity?')) {
+            console.log('Deleting...');
+            // Remove content from the accordion (this should be handled based on specific logic, here it clears all)
+            accordion.innerHTML = '';
+            // Show success message
+            showSuccessMessage();
+        }
+    });
 
     // Function to show success message
     function showSuccessMessage() {
-        toastr.success('Great')
-       // successMessage.style.display = 'block';
-        // Hide success message after 3 seconds
-        
+        toastr.success('Operation completed successfully!');
     }
 });
+
+
 
 // Function to open the modal with the clicked image
 function openModal(imagePath) {
@@ -190,4 +179,54 @@ function closeModal() {
     modal.style.display = 'none';
 }
 
+
+//api
+document.addEventListener("DOMContentLoaded", () => {
+    let searchButton = document.querySelector("#search");
+
+    searchButton.addEventListener("click", async (event) => {
+        event.preventDefault(); // Prevent form submission
+        console.log("button pressed");
+        // Retrieve the value of the search input field directly
+        let query = document.querySelector("#search-input").value.trim();
+        // Check if the query is not empty before sending the API request
+        if (query !== "") {
+            await sendApiRequest(query); // Pass the query to the sendApiRequest function
+        } else {
+            console.log("Search query is empty.");
+        }
+    });
+    
+
+    // Define the sendApiRequest function to fetch data from the API
+    async function sendApiRequest(query) {
+        let API_ID = "6e4063e4";
+        let API_KEY = "b273bdeedfc397f32f20b1e7f1332ecf";
+        let response = await fetch(`https://api.edamam.com/search?app_id=${API_ID}&app_key=${API_KEY}&q=${query}`);
+        let data = await response.json();
+        useApiData(data);
+    }
+
+    // Define the useApiData function to handle the API response
+    function useApiData(data) {
+        let recipes = data.hits; // Get an array of recipes from the API response
+        let content = ""; // Initialize an empty string to store HTML content
+        // Loop through each recipe and create HTML for it
+        recipes.forEach(recipe => {
+            content += `
+                <div class="card" style="width: 18rem;">
+                    <img src="${recipe.recipe.image}" class="card-img-top" alt="${recipe.recipe.label}">
+                    <div class="card-body">
+                        <h5 class="card-title">${recipe.recipe.label}</h5>
+                        <p class="card-text">Ingredients: ${recipe.recipe.ingredients.map(ingredient => ingredient.text).join(', ')}</p>
+                        <a href="${recipe.recipe.url}" class="btn btn-primary" target="_blank">View Recipe</a>
+                    </div>
+                </div>
+            `;
+        });
+        // Display the HTML content in the #content element
+        document.querySelector("#content").innerHTML = content;
+    }
+});
+});
 

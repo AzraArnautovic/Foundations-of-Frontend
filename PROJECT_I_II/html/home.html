@@ -1,26 +1,119 @@
+<style>
+  .tags-list {
+    display: none;
+  }
 
+  .button {
+    cursor: pointer;
+    padding: 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+  }
+
+  .button:hover {
+    background-color: #0056b3;
+    
+  }
+
+  .recipes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .recipe {
+    display: block;
+    width: 214px;
+    height: 275px;
+    object-fit: cover;
+    text-decoration: wavy;
+    color: #0d6efd;
+}
+  
+
+  .recipe img {
+    width: 100%;
+    height: 230px;
+    display: block;
+  }
+
+  .recipe h5 {
+    margin: 5px 0;
+  }
+
+  .recipe p {
+    margin: 0;
+  }
+  .tags-list a {
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #007BFF;
+  }
+
+  .tags-list a:hover {
+    text-decoration: underline;
+  }
+
+    #edit-btn, #delete-btn {
+    position: relative;
+    top: -50px;
+}
+
+.accordion {
+    margin: 20px auto;
+    width: 50%;
+}
+
+.accordion-item {
+    border: 0px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.accordion-title {
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px 0;
+    padding: 10px; 
+    background-color: #eaeaea; 
+    border-radius: 10px; 
+}
+
+.accordion-content {
+    display: none;
+    margin: 5px 0 10px 20px;
+    padding: 10px; 
+    border-left: 2px solid #007bff; 
+}
+
+
+</style>
 <main class="page">
     <!-- Entity information, Edit button, Delete button, and Success message -->
+  
     <div class="description"><p>Use the buttons below to edit or delete the Q&A entries.</p></div>
     <div id="edit-btn" class="button">Edit</div>
     <div id="delete-btn" class="button">Delete</div>
+ 
+
+    <div id="accordion" class="accordion"></div><br><br>
+
     <div id="success-message"></div>
-
-  <div id="entity-info"></div>
-    <!-- Entity information fetched from JSON will be displayed here -->
-    
-
-   <!--accordion menu-->
-   <div class="accordion" id="accordion">
-    <!--<button class="toggle-button" onclick="toggleAnswer(this)">Toggle Answer</button>-->
+   
    </div>
  
     <!--recipes container-->
     <section class="recipes-container">
     <!--tags container-->
     <div class="tags-container">
-      <h4>recipes</h4>
-      <div class="tags-list">
+      <h4 id="recipes-title" class="button">recipes</h4>
+      <div class="tags-list" id="tags-list">
         <a href="#tag-template">Breakfast (3)</a>
         <a href="#tag-template">Lunch (4)</a>
         <a href="#tag-template">Dinner (3)</a>
@@ -32,7 +125,7 @@
     
     </div>
     <!--recipes list-->
-    <div class="recipes-list">
+    <div class="recipes-list" id="recipes-list">
      <!--single recipe--> 
      <a href="#buns-recipe" class="recipe">
      <img src="/assets/images/buns.webp" alt="Bread buns" class="img recipe-img"/>
@@ -62,7 +155,7 @@
       </a>
 
       <!--single recipe--> 
-     <a href="#sushi class=" class="recipe">
+     <a href="#sushi" class="recipe">
       <img src="/assets/images/sushi.jpg" alt="California rolls" class="img recipe-img"/>
       <h5>Sushi ~ California rolls</h5>
       <p>Prep : 25min | Assemble : 15min</p>
@@ -86,3 +179,13 @@
 
     </section>
 </main>
+<script>
+  document.getElementById('recipes-title').addEventListener('click', function() {
+    const tagsList = document.getElementById('tags-list');
+    if (tagsList.style.display === 'none' || tagsList.style.display === '') {
+      tagsList.style.display = 'block';
+    } else {
+      tagsList.style.display = 'none';
+    }
+  });
+</script>

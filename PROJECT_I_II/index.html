@@ -52,6 +52,22 @@
        <script src="/js/custom.js"></script>
         
 </head>
+<style>
+  #search-form {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  #search-form input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+  }
+
+  #search-form button {
+    padding: 10px 20px;
+  }
+</style>
 <body>
 <!--theme switcher-->
 <input type="checkbox" id="themeSwitch" name="theme-switch" class="theme-switch__input" />
@@ -83,17 +99,15 @@
       </li>
       <li class="nav-item">      <button class="btn" onclick="UserService.logout()">Logout</button>
       </li>
-     
-        
-     
     </ul>
    
   </div>
-  <form class="d-flex">
-    <input class="form-control me-2" type="search" placeholder="Search for a recipe" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
+  <form id="search-form" class="d-flex">
+    <input id="search-input" class="form-control me-2" type="search" placeholder="Search for a recipe" aria-label="Search">
+    <button id="search" class="btn btn-outline-success" type="submit">Search</button>
   </form>
 </div>
+<div id="content"></div>
 </nav>
 
 <header class="hero">
@@ -108,7 +122,9 @@
 </header>
 
 
+
     <main id="spapp" role="main">
+
         <section id="home" data-load="home.html">
         </section>
         <section id="about" data-load="about.html">
