@@ -55,7 +55,7 @@ const Home = () => {
               <Card>
                 <CardMedia
                   component="img"
-                  sx={{ height: 300, objectFit: 'cover' }}  // Adjusting image to fit within the container
+                  sx={{ height: 300, objectFit: 'cover' }}  
                   image={pet.image}
                   alt={pet.name}
                 />

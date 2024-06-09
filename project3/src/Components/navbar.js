@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItem, ListItemText, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useTheme, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
 // Styled Link to use theme colors
 const StyledLink = styled(Link)(({ theme }) => ({
@@ -33,7 +33,6 @@ const StyledList = styled(List)(({ theme }) => ({
 
 const Navbar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
-  const theme = useTheme();
 
   const toggleDrawer = () => {
     setOpenDrawer(!openDrawer);
